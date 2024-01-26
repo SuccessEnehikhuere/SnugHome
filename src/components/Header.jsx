@@ -1,0 +1,29 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+const Header = () => {
+  return (
+    <header className="bg-white text-black py-2 ">
+      <div className="align-item flex justify-center sm:justify-end ">
+        {/* USER*/}
+        {/* LINKS*/}
+        <div className="flex gap-x-6 justify-center items-center ">
+          <Link
+            to="/login"
+            className="link link-hover text-xs sm:text-sm capitalize"
+          >
+            sign in/ guest
+          </Link>
+          <Link
+            to="/register"
+            className="link link-hover text-xs sm:text-sm capitalize"
+          >
+           create account
+          </Link>
+        </div>
+      </div>
+    </header>
+  )
+}
+
+export default Header

@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+  .align-item{
+    @apply mx-auto max-w-6xl px-8;
+  }
+}
+
+

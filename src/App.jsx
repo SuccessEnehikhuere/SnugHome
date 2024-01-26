@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { HomeLayout, Home, About, Error, Landing, Register, Login } from './pages'
+import { HomeLayout, Home, About, Error, Landing, Register, Login, Cart, Products, SingleProduct } from './pages'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
@@ -19,6 +19,18 @@ const router = createBrowserRouter([
       {
         path: 'About',
         element: <About />,
+      },
+      {
+        path: 'Products',
+        element: <Products />,
+      },
+      {
+        path: 'Cart',
+        element: <Cart />,
+      },
+      {
+        path: 'Products:/id',
+        element: <SingleProduct />,
       },
     ],
   },
