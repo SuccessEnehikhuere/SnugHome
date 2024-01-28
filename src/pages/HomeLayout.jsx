@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import { Header, Navbar } from '../components'
+import { Footer, Header, Navbar } from '../components'
 
 const HomeLayout = () => {
   return (
@@ -10,6 +10,7 @@ const HomeLayout = () => {
       <section className="align-item py-20">
         <Outlet />
       </section>
+      <Footer/>
     </>
   )
 }
