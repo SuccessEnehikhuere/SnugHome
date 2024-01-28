@@ -33,11 +33,10 @@ const Register = () => {
         </div>
 
         <p className="text-center">
-          already a member? 
-          <Link to="/login" className="ml-2 link link-hover link-primary">
+          already a member?
+          <Link to="/login" className="ml-2 link link-hover text-[#D87D4A] font-medium">
             login
           </Link>
-         
         </p>
       </Form>
     </section>
