@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <header className="bg-white text-black py-2 ">
+    <header className="bg-white text-black py-2 z-[1] ">
       <div className="align-item flex justify-center sm:justify-end ">
         {/* USER*/}
         {/* LINKS*/}
