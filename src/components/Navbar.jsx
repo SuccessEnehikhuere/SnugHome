@@ -1,10 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { BsCart3 } from 'react-icons/bs'
+import { BsCart3, BsMoonFill, BsSunFill } from 'react-icons/bs'
 import { NavLink } from 'react-router-dom'
 import { Navlinks } from './NavLinks'
 
+const themes = {
+  winter: 'winter',
+  dracula:'dracula'
+}
+
+const getThemeFromLocalStorage = ()=>{
+  return localStorage.getItem('theme') || themes.winter
+}
+
 const Navbar = () => {
+  const [theme, setTheme] = useState(getThemeFromLocalStorage())
+  const toggleTheme = ()=>{
+    const {winter, dracula} = themes;
+    const newTheme = theme === winter ? dracula : winter;
+     
+    setTheme(newTheme);
+  }
+  useEffect(()=>{
+    document.documentElement.setAttribute('data-theme',theme);
+    localStorage.setItem('theme', theme)
+  },[theme])
+
   return (
     <nav className=" bg-primary-content">
       <div className="navbar align-item">
@@ -33,18 +54,26 @@ const Navbar = () => {
 
         <div className="navbar-end">
           {/*THEME*/}
+
+          <label className="swap swap-rotate">
+            <input type="checkbox" onChange={toggleTheme} />
+            <BsSunFill className="swap-on w-4 h-4" />
+            <BsMoonFill className="swap-off w-4 h-4" />
+          </label>
+
           {/*CART LINK*/}
           <NavLink to="/cart" className="btn btn-ghost btn-circle btn-md ml-4 ">
             <div className="indicator">
               <BsCart3 className="w-6 h-6" />
-              <span className="badge badge-sm badge-warning indicator-item">
+              <span className="badge badge-sm bg-[#D87D4A] indicator-item text-white">
                 8
               </span>
             </div>
           </NavLink>
         </div>
       </div>
-      <div className='h-[1px] bg-white w-full md:w-[689px] lg:w-1110px align-item'/>
+      {/*UNDERLINE*/}
+      <div className="h-[1px] bg-white w-full md:w-[689px] lg:w-1110px align-item opacity-20" />
     </nav>
   )
 }

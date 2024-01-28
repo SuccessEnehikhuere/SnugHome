@@ -4,7 +4,7 @@ import IconLinks from './IconLinks'
 
 const Footer = () => {
   return (
-    <footer className="footer items-center p-4 bg-neutral text-white mt-8 md:mt-10">
+    <footer className="footer items-center p-4 bg-black text-white mt-8 md:mt-10">
       <div className="align-item">
         {/*UNDERLINE*/}
         {/* <div className='h-1 w-24 bg-warning mt-0 pt-0 '/> */}
@@ -14,9 +14,10 @@ const Footer = () => {
             <h2 className="text-3xl font-bold ">audiophile</h2>
           </div>
           {/*LINKS*/}
+          {/*REDUCE TEXT SIZE OF LINKS IN MOBILE*/}
           <div className="grid place-items-center mt-6">
             <ul className="menu text-base menu-sm md:menu-md menu-horizontal font-medium ">
-              <Navlinks hover='hover:text-warning'/>
+              <Navlinks hover="hover:text-[#D87D4A]" />
             </ul>
           </div>
         </nav>

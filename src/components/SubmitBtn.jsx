@@ -6,11 +6,18 @@ const SubmitBtn = ({text}) => {
   const isSubmitting = navigation.state === 'submitting'
  
   return (
-    <button type="submit" className="btn btn-primary btn-block capitalize" disabled={isSubmitting}>
-      {isSubmitting?<>
-       <span className='loading loading-spinner'></span>loading...
-      </>: text || 'submit'}
-    
+    <button
+      type="submit"
+      className="btn bg-[#D87D4A] btn-block capitalize text-white hover:bg-[#FBAF85]"
+      disabled={isSubmitting}
+    >
+      {isSubmitting ? (
+        <>
+          <span className="loading loading-spinner"></span>loading...
+        </>
+      ) : (
+        text || 'submit'
+      )}
     </button>
   )
 }
