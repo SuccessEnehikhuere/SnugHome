@@ -27,7 +27,6 @@ const Navbar = () => {
 
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal">
-            {' '}
             <Navlinks />
           </ul>
         </div>
@@ -38,13 +37,14 @@ const Navbar = () => {
           <NavLink to="/cart" className="btn btn-ghost btn-circle btn-md ml-4 ">
             <div className="indicator">
               <BsCart3 className="w-6 h-6" />
-              <span className="badge badge-sm badge-primary indicator-item">
+              <span className="badge badge-sm badge-warning indicator-item">
                 8
               </span>
             </div>
           </NavLink>
         </div>
       </div>
+      <div className='h-[1px] bg-white w-full md:w-[689px] lg:w-1110px align-item'/>
     </nav>
   )
 }

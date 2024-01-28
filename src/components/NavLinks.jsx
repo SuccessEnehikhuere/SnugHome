@@ -9,14 +9,14 @@ const Links = [
   { id: 6, url: 'orders', text: 'orders' },
 ]
 
-export const Navlinks = ()=>{
+export const Navlinks = ({hover})=>{
   return (
     <>
     {Links.map((link)=>{
       const {id, url, text}=link;
       return (
-        <li id={id}>
-          <NavLink  to ={url} className='capitalize' >
+        <li key={id}>
+          <NavLink  to ={url} className={`capitalize ${hover}`} >
         {text}
       </NavLink>
         </li>
