@@ -6,11 +6,11 @@ const HomeLayout = () => {
   return (
     <>
       <Header />
-      <Navbar/>
-      <section className="align-item py-20">
+      <Navbar />
+      <section className="align-item py-20 ">
         <Outlet />
       </section>
-      <Footer/>
+      <Footer />
     </>
   )
 }

@@ -4,4 +4,8 @@ export { default as FormInput } from './FormInput';
 export { default as SubmitBtn } from './SubmitBtn';
 export { default as Footer } from './Footer';
 export { default as SectionTitle } from './SectionTitle';
-export { default as IconLinks } from './IconLinks'
+export { default as IconLinks } from './IconLinks';
+export { default as Hero} from './Hero'
+export { default as FeaturedProducts } from './FeaturedProducts';
+export { default as HomeFooter} from './HomeFooter';
+export { default as ErrorElement } from './ErrorElement';

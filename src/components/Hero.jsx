@@ -46,7 +46,6 @@ const Hero = () => {
           })}
         </div>
       </div>
-      <FeaturedProducts />
       <HomeFooter />
     </section>
   )

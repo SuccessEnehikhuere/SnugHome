@@ -2,6 +2,15 @@ import { useState } from 'react'
 import { HomeLayout, Home, About, Error, Landing, Register, Login, Cart, Products, SingleProduct } from './pages'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+import { ErrorElement } from './components'
+
+//loaders
+import {loader as landingloader} from './pages/Landing'
+import { loader as SingleProductLoader } from './pages/SingleProduct'
+
+//actions
+
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -11,6 +20,8 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
+        errorElement: <ErrorElement />,
+        loader: landingloader,
       },
       {
         path: 'Home',
@@ -29,8 +40,10 @@ const router = createBrowserRouter([
         element: <Cart />,
       },
       {
-        path: 'Products:/id',
+        path: 'Products/:id',
         element: <SingleProduct />,
+        errorElement: <ErrorElement />,
+        loader: SingleProductLoader,
       },
     ],
   },
