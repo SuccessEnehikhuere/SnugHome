@@ -1,9 +1,9 @@
 import React from 'react'
 
-const paginationContainer = () => {
+const PaginationContainer = () => {
   return (
     <div>paginationContainer</div>
   )
 }
 
-export default paginationContainer
+export default PaginationContainer
