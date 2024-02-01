@@ -1,15 +1,20 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
-import { Footer, Header, Navbar } from '../components'
+import { Outlet, useNavigation } from 'react-router-dom'
+import { Footer, Header, Loading, Navbar } from '../components'
 
 const HomeLayout = () => {
+  const navigation = useNavigation()
+  const isLoading = navigation.state === 'loading'
   return (
     <>
       <Header />
       <Navbar />
-      <section className="align-item py-20 ">
+      {isLoading ? (
+        <Loading/>
+      ):<section className="align-item py-20 ">
         <Outlet />
-      </section>
+      </section> }
+      
       <Footer />
     </>
   )
