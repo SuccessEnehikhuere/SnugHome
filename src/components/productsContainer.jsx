@@ -1,17 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ProductsGrid from './ProductsGrid'
 import { useLoaderData } from 'react-router-dom'
 import ProductsList from './ProductsList'
 import {BsFillGridFill, BsList} from 'react-icons/bs'
 
+const getProductsLayout = ()=>{
+  return localStorage.getItem('layout') || 'grid'
+}
+
 const ProductsContainer = () => {
   const {meta} = useLoaderData()
   const totalProducts = meta.pagination.total 
-  const [layout,setLayout ] = useState('grid');
+  const [layout, setLayout ] = useState(getProductsLayout());
 
   const setActiveStyles = (style)=>{
      return `text-xl btn btn-circle btn-sm`
   }
+  useEffect(() => {
+    localStorage.setItem('layout', layout)
+  }, [layout])
+
+   const handleLayoutChange = (newLayout) => {
+     setLayout(newLayout)
+   }
 
   return (
     <>
@@ -24,14 +35,14 @@ const ProductsContainer = () => {
           <button
             type="button"
             className={setActiveStyles('grid')}
-            onClick={() => setLayout('grid')}
+            onClick={() => handleLayoutChange('grid')}
           >
             <BsFillGridFill />
           </button>
           <button
             type="button"
             className={setActiveStyles('list')}
-            onClick={() => setLayout('list')}
+            onClick={() => handleLayoutChange('list')}
           >
             <BsList />
           </button>
