@@ -1,5 +1,5 @@
 import React from 'react'
-import image from '../assets/images/woman.png'
+import image from '../assets/images/About.jpeg'
 import { SectionTitle } from '../components'
 
 const About = () => {
