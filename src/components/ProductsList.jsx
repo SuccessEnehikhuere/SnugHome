@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
+import { formatPrice } from '../utilis'
 
 const ProductsList = () => {
   const { results } = useLoaderData()
@@ -26,8 +27,8 @@ const ProductsList = () => {
                 {company}
               </h4>
             </div>
-            <p className="text-[#D87D4A] font-medium ml-0 sm:ml-auto text-lg">
-              {price}
+            <p className="text-secondary font-medium ml-0 sm:ml-auto text-lg">
+              {formatPrice(price)}
             </p>
           </Link>
         )
