@@ -14,7 +14,11 @@ const ProductsContainer = () => {
   const [layout, setLayout ] = useState(getProductsLayout());
 
   const setActiveStyles = (style)=>{
-     return `text-xl btn btn-circle btn-sm`
+     return `text-xl btn btn-circle btn-sm ${
+       style === layout
+         ? 'btn-secondary text-primary-content'
+         : 'btn-ghost text-base-content'
+     } `
   }
   useEffect(() => {
     localStorage.setItem('layout', layout)
