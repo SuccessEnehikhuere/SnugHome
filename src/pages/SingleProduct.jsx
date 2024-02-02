@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { customFetch, getAmountOptions } from '../utilis'
 import { useLoaderData } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addItem } from '../features/cart/cartSlice'
 
 const data = [
   { id: 1, unit: '2x', text: 'Earphone unit' },
@@ -14,20 +16,35 @@ const data = [
 export const loader = async ({ params }) => {
   const response = await customFetch(`/products/${params.id}`)
 
-  return { result: response.data.data }
+  return { product: response.data.data }
 }
 
 const SingleProduct = () => {
-  const { result } = useLoaderData()
-  console.log(result);
-
+  const { product } = useLoaderData()
   const { image, title, company, colors, price, description } =
-    result.attributes
+    product.attributes
   const [productColor, setProductColor] = useState(colors[0])
   const [productAmount, setProductAmount] = useState(1)
   const selectProductAmount = (e) => {
     setProductAmount(parseInt(e.target.value))
   }
+
+  const dispatch = useDispatch()
+  const cartProduct = ({
+    cartID : product.id + productColor,
+    productID : product.id,
+    image,
+    title,
+    price,
+    productAmount,
+    productColor,
+    company,
+  })
+
+  const addToCart = ()=>{
+    dispatch(addItem({product: cartProduct}))
+  }
+  
   return (
     <section>
       <div className="text-md breadcrumbs">
@@ -99,7 +116,7 @@ const SingleProduct = () => {
 
             {/* CART BUTTON */}
              <div className="mt-10">
-            <button className="btn bg-[#D87D4A] uppercase text-white btn-md hover:bg-[#FBAF85;] text-xs">
+            <button className="btn bg-[#D87D4A] uppercase text-white btn-md hover:bg-[#FBAF85;] text-xs" onClick={addToCart}>
               add to cart
             </button>
           </div>
