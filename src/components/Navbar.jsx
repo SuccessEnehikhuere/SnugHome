@@ -3,6 +3,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { BsCart3, BsMoonFill, BsSunFill } from 'react-icons/bs'
 import { NavLink } from 'react-router-dom'
 import { Navlinks } from './NavLinks'
+import { useSelector } from 'react-redux'
 
 const themes = {
   winter: 'winter',
@@ -25,6 +26,9 @@ const Navbar = () => {
     document.documentElement.setAttribute('data-theme',theme);
     localStorage.setItem('theme', theme)
   },[theme])
+
+  const numItemsInCart = useSelector((state)=>state.cartState.numItemsInCart)
+  
 
   return (
     <nav className=" bg-primary-content">
@@ -66,7 +70,7 @@ const Navbar = () => {
             <div className="indicator">
               <BsCart3 className="w-6 h-6" />
               <span className="badge badge-sm bg-[#D87D4A] indicator-item text-white">
-                8
+                {numItemsInCart}
               </span>
             </div>
           </NavLink>
