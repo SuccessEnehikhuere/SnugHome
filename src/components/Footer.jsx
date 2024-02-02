@@ -17,7 +17,7 @@ const Footer = () => {
           {/*REDUCE TEXT SIZE OF LINKS IN MOBILE*/}
           <div className="grid place-items-center mt-6">
             <ul className="menu text-base menu-sm md:menu-md menu-horizontal font-medium ">
-              <Navlinks hover="hover:text-[#D87D4A]" />
+              <Navlinks  />
             </ul>
           </div>
         </nav>
