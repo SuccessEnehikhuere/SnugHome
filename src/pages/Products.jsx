@@ -20,6 +20,7 @@ export const loader = async({request})=>{
 
   const results = response.data.data
   const meta = response.data.meta
+  
   return { results, meta, params}
 }
 
