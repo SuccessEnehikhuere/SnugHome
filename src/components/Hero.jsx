@@ -6,7 +6,7 @@ import img4 from '../assets/images/hero2.webp'
 import img5 from '../assets/images/hero3.webp'
 import img6 from '../assets/images/hero4.webp'
 import { Link } from 'react-router-dom'
-import { FeaturedProducts, HomeFooter } from '../components'
+
 
 const images = [img1, img2, img3, img4, img5, img6]
 
@@ -46,7 +46,7 @@ const Hero = () => {
           })}
         </div>
       </div>
-      <HomeFooter />
+
     </section>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { FeaturedProducts, Hero } from '../components'
+import { FeaturedProducts, Hero, HomeFooter } from '../components'
 
 import { customFetch } from '../utilis'
 
@@ -18,6 +18,7 @@ const Landing = () => {
     <>
      <Hero/>
      <FeaturedProducts/>
+     <HomeFooter/>
     </>
   )
 }

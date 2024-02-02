@@ -1,14 +1,15 @@
 import React from 'react'
 import { useNavigation } from 'react-router-dom'
 
-const SubmitBtn = ({text}) => {
+const SubmitBtn = ({text, size}) => {
   const navigation = useNavigation()
   const isSubmitting = navigation.state === 'submitting'
  
   return (
     <button
       type="submit"
-      className="btn bg-[#D87D4A] btn-block capitalize text-white hover:bg-[#FBAF85]"
+      className={`btn bg-[#D87D4A] btn-block capitalize text-white hover:bg-[#FBAF85] 
+      ${size}`}
       disabled={isSubmitting}
     >
       {isSubmitting ? (
