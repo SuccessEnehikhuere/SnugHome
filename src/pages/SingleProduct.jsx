@@ -1,17 +1,10 @@
 import React, { useState } from 'react'
-import { customFetch, getAmountOptions } from '../utilis'
+import { customFetch, formatPrice, getAmountOptions } from '../utilis'
 import { useLoaderData } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addItem } from '../features/cart/cartSlice'
 
-const data = [
-  { id: 1, unit: '2x', text: 'Earphone unit' },
-  { id: 2, unit: '2x', text: 'Earphone unit' },
-  { id: 3, unit: '2x', text: 'Earphone unit' },
-  { id: 4, unit: '2x', text: 'Earphone unit' },
-  { id: 5, unit: '2x', text: 'Earphone unit' },
-]
 
 export const loader = async ({ params }) => {
   const response = await customFetch(`/products/${params.id}`)
@@ -24,9 +17,9 @@ const SingleProduct = () => {
   const { image, title, company, colors, price, description } =
     product.attributes
   const [productColor, setProductColor] = useState(colors[0])
-  const [productAmount, setProductAmount] = useState(1)
+  const [amount, setAmount] = useState(1)
   const selectProductAmount = (e) => {
-    setProductAmount(parseInt(e.target.value))
+    setAmount(parseInt(e.target.value))
   }
 
   const dispatch = useDispatch()
@@ -36,7 +29,7 @@ const SingleProduct = () => {
     image,
     title,
     price,
-    productAmount,
+    amount,
     productColor,
     company,
   })
@@ -73,7 +66,7 @@ const SingleProduct = () => {
           </h4>
           <h1 className="capitalize text-3xl font-bold">{title}</h1>
           <p className="mt-6 leading-8">{description}</p>
-          <p className="mt-3 text-xl">{price}</p>
+          <p className="mt-3 text-xl">{formatPrice(price)}</p>
 
           {/* COLORS */}
           <div className="mt-6">
@@ -107,7 +100,7 @@ const SingleProduct = () => {
               </label>
               <select
                 className="select select-bordered select-secondary select-md "
-                value={productAmount}
+                value={amount}
                 onChange={selectProductAmount}
               >
                 {getAmountOptions(10)}

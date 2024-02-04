@@ -1,8 +1,37 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { formatPrice } from '../utilis'
 
 const CartTotals = () => {
+  const { cartTotal, shipping, tax, orderTotal } = useSelector(
+    (state) => state.cartState
+  )
+  
   return (
-    <div>CartTotals</div>
+    <div className="card bg-base-200">
+      <div className="card-body">
+        {/* SUBTOTAL */}
+        <p className="border-b flex justify-between text-xs border-base-300 pb-2">
+          <span>Subtotal</span>
+          <span className="font-medium">{formatPrice(cartTotal)}</span>
+        </p>
+        {/* SHIPPING */}
+        <p className="border-b flex justify-between text-xs border-base-300 pb-2">
+          <span>Shipping</span>
+          <span className="font-medium">{formatPrice(shipping)}</span>
+        </p>
+        {/* TAX */}
+        <p className="border-b flex justify-between text-xs border-base-300 pb-2">
+          <span>Tax</span>
+          <span className="font-medium">{formatPrice(tax)}</span>
+        </p>
+        {/* TOTAL */}
+        <p className="flex justify-between text-sm mt-4 pb-2">
+          <span className='font-bold'>Order Total</span>
+          <span className="font-bold">{formatPrice(orderTotal)}</span>
+        </p>
+      </div>
+    </div>
   )
 }
 
