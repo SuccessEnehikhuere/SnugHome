@@ -5,8 +5,9 @@ import {CartTotals, CartItemsList, SectionHeading} from '../components'
 
 const Cart = () => {
   const user = null
-  const numsItemsInCart = useSelector((state)=>state.cartState.numsItemsInCart)
-  if(numsItemsInCart === 0) {
+  const numItemsInCart = useSelector((state)=>state.cartState.numItemsInCart)
+  
+  if(numItemsInCart === 0) {
     return <SectionHeading text='your cart is empty' />
   }
   return (
