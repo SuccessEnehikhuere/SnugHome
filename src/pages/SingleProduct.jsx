@@ -6,11 +6,21 @@ import { useDispatch } from 'react-redux'
 import { addItem } from '../features/cart/cartSlice'
 
 
-export const loader = async ({ params }) => {
-  const response = await customFetch(`/products/${params.id}`)
-
-  return { product: response.data.data }
+const singleProductQuery = (id)=> {
+  return {
+    queryKey: ['singleProduct',  id],
+   queryFn : ()=> customFetch(`/products/${id}`)
+  }
+   
+  
 }
+
+export const loader =
+  (queryClient) =>
+  async ({ params }) => {
+    const response = await queryClient.ensureQueryData(singleProductQuery(params.id))
+    return { product: response.data.data }
+  }
 
 const SingleProduct = () => {
   const { product } = useLoaderData()
@@ -23,21 +33,21 @@ const SingleProduct = () => {
   }
 
   const dispatch = useDispatch()
-  const cartProduct = ({
-    cartID : product.id + productColor,
-    productID : product.id,
+  const cartProduct = {
+    cartID: product.id + productColor,
+    productID: product.id,
     image,
     title,
     price,
     amount,
     productColor,
     company,
-  })
-
-  const addToCart = ()=>{
-    dispatch(addItem({product: cartProduct}))
   }
-  
+
+  const addToCart = () => {
+    dispatch(addItem({ product: cartProduct }))
+  }
+
   return (
     <section>
       <div className="text-md breadcrumbs">
@@ -90,7 +100,7 @@ const SingleProduct = () => {
             </div>
           </div>
 
-          <div className='flex gap-x-6'>
+          <div className="flex gap-x-6">
             {/* AMOUNT */}
             <div className="form-control w-50  max-w-xs">
               <label className="label">
@@ -108,15 +118,17 @@ const SingleProduct = () => {
             </div>
 
             {/* CART BUTTON */}
-             <div className="mt-10">
-            <button className="btn bg-[#D87D4A] uppercase text-white btn-md hover:bg-[#FBAF85;] text-xs" onClick={addToCart}>
-              add to cart
-            </button>
+            <div className="mt-10">
+              <button
+                className="btn bg-[#D87D4A] uppercase text-white btn-md hover:bg-[#FBAF85;] text-xs"
+                onClick={addToCart}
+              >
+                add to cart
+              </button>
+            </div>
           </div>
-          </div>      
         </div>
       </div>
-
     </section>
   )
 }

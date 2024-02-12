@@ -6,8 +6,13 @@ import { customFetch } from '../utilis'
 
 const url = '/products?featured=true'
 
-export const loader = async()=>{
-  const response = await customFetch(url)
+const landingPageQuery ={
+  queryKey : ['featuredProducts'],
+  queryFn: () => customFetch(url)
+
+}
+export const loader = (queryClient) => async()=>{
+  const response = await queryClient.ensureQueryData(landingPageQuery)
   const results = response.data.data
   return {results};
 }
