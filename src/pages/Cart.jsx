@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import {CartTotals, CartItemsList, SectionHeading} from '../components'
 
 const Cart = () => {
-  const user = null
+  const { user } = useSelector((state) => state.userState)
   const numItemsInCart = useSelector((state)=>state.cartState.numItemsInCart)
   
   if(numItemsInCart === 0) {
@@ -24,7 +24,7 @@ const Cart = () => {
               proceed to checkout
             </Link>
           ) : (
-            <Link to="/checkout" className="btn btn-secondary btn-block mt-8 capitalize">
+            <Link to="/login" className="btn btn-secondary btn-block mt-8 capitalize">
               please login
             </Link>
           )}
