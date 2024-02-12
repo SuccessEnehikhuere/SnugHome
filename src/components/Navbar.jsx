@@ -3,30 +3,20 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { BsCart3, BsMoonFill, BsSunFill } from 'react-icons/bs'
 import { NavLink } from 'react-router-dom'
 import { Navlinks } from './NavLinks'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleTheme } from '../features/user/userSlice'
 
-const themes = {
-  winter: 'winter',
-  dracula:'dracula'
-}
 
-const getThemeFromLocalStorage = ()=>{
-  return localStorage.getItem('theme') || themes.winter
-}
+
+
+
 
 const Navbar = () => {
-  const [theme, setTheme] = useState(getThemeFromLocalStorage())
-  const toggleTheme = ()=>{
-    const {winter, dracula} = themes;
-    const newTheme = theme === winter ? dracula : winter;
-     
-    setTheme(newTheme);
+  const dispatch = useDispatch()
+  const handleTheme = ()=>{
+   dispatch(toggleTheme())
   }
-  useEffect(()=>{
-    document.documentElement.setAttribute('data-theme',theme);
-    localStorage.setItem('theme', theme)
-  },[theme])
-
+ 
   const numItemsInCart = useSelector((state)=>state.cartState.numItemsInCart)
   
 
@@ -60,7 +50,7 @@ const Navbar = () => {
           {/*THEME*/}
 
           <label className="swap swap-rotate">
-            <input type="checkbox" onChange={toggleTheme} />
+            <input type="checkbox" onChange={handleTheme} />
             <BsSunFill className="swap-on w-4 h-4" />
             <BsMoonFill className="swap-off w-4 h-4" />
           </label>
