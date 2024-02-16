@@ -9,6 +9,7 @@ export { default as Hero} from './Hero'
 export { default as FeaturedProducts } from './FeaturedProducts';
 export { default as HomeFooter} from './HomeFooter';
 export { default as ErrorElement } from './ErrorElement';
+export { default as ProductsContainer } from './ProductsContainer';
 export { default as PaginationContainer } from './PaginationContainer';
 export { default as Filters } from './Filters';
 export { default as Loading } from './Loading';
@@ -18,4 +19,3 @@ export { default as SectionHeading } from './SectionHeading'
 export { default as CheckoutForm } from './CheckoutForm'
 export { default as OrdersList } from './OrdersList'
 export { default as OrdersPagination } from './OrdersPagination'
-export {default as ItemsContainer} from './ItemsContainer'
