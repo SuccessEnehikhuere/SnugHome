@@ -71,7 +71,7 @@ const SingleProduct = () => {
 
         {/* PRODUCT INFO */}
         <div>
-          <h4 className="text-xl text-[#D87D4A]  mt-2 tracking-widest ">
+          <h4 className="text-xl text-[#4f46e5]  mt-2 tracking-widest ">
             {company}
           </h4>
           <h1 className="capitalize text-3xl font-bold">{title}</h1>
@@ -109,7 +109,7 @@ const SingleProduct = () => {
                 </h4>
               </label>
               <select
-                className="select select-bordered select-secondary select-md "
+                className="select select-bordered border-[#4f46e5] select-md "
                 value={amount}
                 onChange={selectProductAmount}
               >
@@ -120,7 +120,7 @@ const SingleProduct = () => {
             {/* CART BUTTON */}
             <div className="mt-10">
               <button
-                className="btn bg-[#D87D4A] uppercase text-white btn-md hover:bg-[#FBAF85;] text-xs"
+                className="btn bg-[#4f46e5] uppercase text-white btn-md hover:bg-[#a5b4fc] text-xs"
                 onClick={addToCart}
               >
                 add to cart

@@ -29,7 +29,7 @@ const Header = () => {
           <div className="flex gap-x-2 sm:gap-x-8 items-center">
             <p className="text-xs sm:text-sm">Hello, {user.username}</p>
             <button
-              className="btn btn-xs  bg-[#D87D4A] hover:bg-[#FBAF85] text-white"
+              className="btn btn-xs  bg-[#4f46e5] hover:bg-[#a5b4fc] text-white border-none"
               onClick={handleUserLogout}
             >
               logout

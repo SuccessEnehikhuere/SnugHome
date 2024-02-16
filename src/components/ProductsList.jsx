@@ -27,7 +27,7 @@ const ProductsList = () => {
                 {company}
               </h4>
             </div>
-            <p className="text-secondary font-medium ml-0 sm:ml-auto text-lg">
+            <p className=" font-medium ml-0 sm:ml-auto text-lg">
               {formatPrice(price)}
             </p>
           </Link>

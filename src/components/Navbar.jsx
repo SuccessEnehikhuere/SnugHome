@@ -37,7 +37,9 @@ const Navbar = () => {
         </div>
         {/*TITLE*/}
         <div className="navbar-start flex items-center">
-          <h2 className="font-bold text-2xl lg:text-3xl">audiophile</h2>
+          <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl">
+            <span className="text-[#4f46e5]">Snug</span>Home
+          </h2>
         </div>
 
         <div className="navbar-center hidden lg:flex">
@@ -59,7 +61,7 @@ const Navbar = () => {
           <NavLink to="/cart" className="btn btn-ghost btn-circle btn-md ml-4 ">
             <div className="indicator">
               <BsCart3 className="w-6 h-6" />
-              <span className="badge badge-sm bg-[#D87D4A] indicator-item text-white">
+              <span className="badge badge-sm bg-[#4f46e5] indicator-item text-white">
                 {numItemsInCart}
               </span>
             </div>
