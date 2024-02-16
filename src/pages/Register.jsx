@@ -35,19 +35,16 @@ const Register = () => {
           type="text"
           name="username"
           label="name"
-          defaultValue="John35"
         />
         <FormInput
           type="email"
           name="email"
           label="email"
-          defaultValue="john35t@gmail.com"
         />
         <FormInput
           type="password"
           name="password"
           label="password"
-          defaultValue="secret"
         />
         <div className="mt-4">
           <SubmitBtn text="submit" />
