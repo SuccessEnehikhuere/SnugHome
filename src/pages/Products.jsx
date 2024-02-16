@@ -1,6 +1,7 @@
 import React from 'react'
-import { Filters, PaginationContainer, ProductsContainer } from '../components'
+import { Filters, PaginationContainer} from '../components'
 import { customFetch } from '../utilis'
+import ProductsContainer from '../components/ProductsContainer'
 
 const url = '/products'
 
