@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLoaderData, useLocation, useNavigate } from 'react-router-dom'
 
-const PaginationContainer = () => {
+const Pagination = () => {
   const { meta } = useLoaderData()
   const { page, pageCount } = meta.pagination
 
@@ -21,8 +21,8 @@ const PaginationContainer = () => {
   //The URLSearchParams is a JavaScript class that allows you to work with the query string part of a URL.The query string is the part of a URL that comes after the "?" character and contains key-value pairs separated by "&".
   //.set method is used to set or update a parameter in the query string of a URL.
   //The toString() method in this case returns a string that represents the key-value pairs in the format expected in a URL's query string.
- 
-  if(pageCount < 2) return null
+
+  if (pageCount < 2) return null
 
   return (
     <div className="mt-16 flex justify-end">
@@ -32,7 +32,8 @@ const PaginationContainer = () => {
           onClick={() => {
             let prevPage = page - 1
             if (prevPage < 1) prevPage = pageCount
-            handlePageCount(prevPage)}}
+            handlePageCount(prevPage)
+          }}
         >
           next
         </button>
@@ -53,8 +54,9 @@ const PaginationContainer = () => {
           className="btn btn-xs sm:btn-md join-item"
           onClick={() => {
             let nextPage = page + 1
-            if(nextPage > pageCount) nextPage = 1
-            handlePageCount(nextPage)}}
+            if (nextPage > pageCount) nextPage = 1
+            handlePageCount(nextPage)
+          }}
         >
           prev
         </button>
@@ -63,4 +65,4 @@ const PaginationContainer = () => {
   )
 }
 
-export default PaginationContainer
+export default Pagination
