@@ -10,6 +10,14 @@ const Links = [
   { id: 6, url: 'orders', text: 'orders' },
 ]
 
+
+const FooterLinks = [
+  { id: 1, url: '/', text: 'home' },
+  { id: 2, url: 'about', text: 'about' },
+  { id: 3, url: 'products', text: 'products' },
+  
+]
+
 export const Navlinks = ({hover})=>{
   const user = useSelector((state)=>state.userState.user)
   return (
@@ -27,6 +35,25 @@ export const Navlinks = ({hover})=>{
         </li>
       )
     })}
+    </>
+  )
+}
+
+export const Footerlinks =({hover})=>{
+  return (
+    <>
+    {FooterLinks.map((link)=>{
+      const {id, url, text} =link
+      return (
+        <li key={id}>
+          <NavLink to={url} className={`capitalize ${hover}`}>
+            {text}
+          </NavLink>
+        </li>
+      )
+      
+    })}
+    
     </>
   )
 }
