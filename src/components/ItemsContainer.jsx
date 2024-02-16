@@ -2,31 +2,31 @@ import React, { useState, useEffect } from 'react'
 import ProductsGrid from './ProductsGrid'
 import { useLoaderData } from 'react-router-dom'
 import ProductsList from './ProductsList'
-import {BsFillGridFill, BsList} from 'react-icons/bs'
+import { BsFillGridFill, BsList } from 'react-icons/bs'
 
-const getProductsLayout = ()=>{
+const getProductsLayout = () => {
   return localStorage.getItem('layout') || 'grid'
 }
 
-const ProductsContainer = () => {
-  const {meta} = useLoaderData()
-  const totalProducts = meta.pagination.total 
-  const [layout, setLayout ] = useState(getProductsLayout());
+const ItemsContainer = () => {
+  const { meta } = useLoaderData()
+  const totalProducts = meta.pagination.total
+  const [layout, setLayout] = useState(getProductsLayout())
 
-  const setActiveStyles = (style)=>{
-     return `text-xl btn btn-circle btn-sm ${
-       style === layout
-         ? 'btn-secondary text-primary-content'
-         : 'btn-ghost text-base-content'
-     } `
+  const setActiveStyles = (style) => {
+    return `text-xl btn btn-circle btn-sm ${
+      style === layout
+        ? 'btn-secondary text-primary-content'
+        : 'btn-ghost text-base-content'
+    } `
   }
   useEffect(() => {
     localStorage.setItem('layout', layout)
   }, [layout])
 
-   const handleLayoutChange = (newLayout) => {
-     setLayout(newLayout)
-   }
+  const handleLayoutChange = (newLayout) => {
+    setLayout(newLayout)
+  }
 
   return (
     <>
@@ -54,11 +54,16 @@ const ProductsContainer = () => {
       </div>
       {/*PRODUCT*/}
       <div>
-        {totalProducts === 0 ? (<h5 className='mt-16 text-2xl'>sorry, no product found...</h5>) : layout === 'grid' ? <ProductsGrid /> : <ProductsList />  }
-      </div>   
-    
+        {totalProducts === 0 ? (
+          <h5 className="mt-16 text-2xl">sorry, no product found...</h5>
+        ) : layout === 'grid' ? (
+          <ProductsGrid />
+        ) : (
+          <ProductsList />
+        )}
+      </div>
     </>
   )
 }
 
-export default ProductsContainer
+export default ItemsContainer

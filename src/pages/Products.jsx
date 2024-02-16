@@ -1,7 +1,7 @@
 import React from 'react'
-import { Filters, PaginationContainer} from '../components'
+import { Filters, PaginationContainer, ItemsContainer } from '../components'
 import { customFetch } from '../utilis'
-import ProductsContainer from '../components/ProductsContainer'
+// import ProductsContainer from '../components/ProductsContainer'
 
 const url = '/products'
 
@@ -47,7 +47,7 @@ const Products = () => {
   return (
     <section>
       <Filters />
-      <ProductsContainer />
+      <ItemsContainer />
       <PaginationContainer />
     </section>
   )
