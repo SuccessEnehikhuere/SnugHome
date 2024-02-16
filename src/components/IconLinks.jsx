@@ -1,6 +1,6 @@
 import twitterLogo from '../assets/images/Path.svg'
 import fbLogo from '../assets/images/fb.svg'
-import instaLogo from '../assets/images/shape.svg'
+import instaLogo from '../assets/images/Shape.svg'
 
 import React from 'react'
 
