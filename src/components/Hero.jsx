@@ -20,14 +20,13 @@ const Hero = () => {
             shop with style
           </h2>
           <p className="text-lg max-w-xl leading-8 mt-8 opacity-75 tracking-wider">
-            Embark on a journey into the heart of innovation with our
-            meticulously curated collection of cutting-edge products. At the
-            intersection of sleek design and technological brilliance, each item
-            in our selection promises to redefine the way you experience
-            everyday life.
+            Welcome to SnugHome, where comfort meets style and every corner is
+            designed to embrace you in warmth and coziness. At SnugHome, we
+            believe that home is more than just a place; it's a sanctuary where
+            you can retreat, relax, and rejuvenate.
           </p>
           <div>
-            <button className="btn  bg-[#D87D4A] capitalize text-white hover:bg-[#FBAF85] mt-4">
+            <button className="btn  bg-[#4f46e5] capitalize text-white hover:bg-[#a5b4fc] mt-4">
               <Link to="/products">our products</Link>
             </button>
           </div>
@@ -46,7 +45,6 @@ const Hero = () => {
           })}
         </div>
       </div>
-
     </section>
   )
 }

@@ -14,21 +14,23 @@ const About = () => {
         </div>
 
         <div>
-        <SectionTitle text="our journey" />
-        <p className="text-base capitalize mt-8 leading-8 tracking-wide md:leading-6 md:tracking-wider lg:leading-8 lg:tracking wide">
-          at audiophile, we live and breathe innovation. we are not just a
-          market place, we are a haven for gadgets enthusiasts. our mission is
-          to bring you the latest gadgets that not only make your life easier
-          but elevate it to a whole new level of excitement.our journey began
-          with a simple goal: to provide a platform where tech enthusiasts,
-          beginners, and experts alike can explore and acquire the most
-          innovative gadgets on the market. Every gadget in our store is chosen
-          for its functionality, design, and impact. From the latest smart home
-          devices to futuristic wearables, our collection is designed to inspire
-          and enhance your lifestyle.Thank you for choosing audiophile. Your
-          journey into the future of technology starts here.
-        </p>
-      </div>
+          <SectionTitle text="our journey" />
+          <p className="text-base capitalize mt-8 leading-8 tracking-wide md:leading-6 md:tracking-wider lg:leading-8 lg:tracking wide">
+            From plush sofas and luxurious bedding to stylish accent pieces and
+            functional accessories, each item in our catalog is carefully
+            selected to bring comfort and joy into your home. Whether you're
+            furnishing a cozy apartment, a spacious house, or a charming
+            cottage, SnugHome offers a diverse range of products to suit every
+            taste and lifestyle. Our commitment to quality craftsmanship,
+            sustainable materials, and affordable pricing ensures that you can
+            create your dream home without compromise. But SnugHome is more than
+            just an online store; it's a community of like-minded individuals
+            who share a passion for creating inviting and nurturing living
+            environments. We're here to inspire and empower you to transform
+            your house into a SnugHome—a place where memories are made, laughter
+            is shared, and every moment is cherished. 
+          </p>
+        </div>
       </div>
     </section>
   )
