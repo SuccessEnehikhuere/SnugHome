@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import {
   HomeLayout,
-  Home,
   About,
   Error,
   Landing,
@@ -53,10 +52,6 @@ const router = createBrowserRouter([
         element: <Landing />,
         errorElement: <ErrorElement />,
         loader: landingloader(queryClient),
-      },
-      {
-        path: 'Home',
-        element: <Home />,
       },
       {
         path: 'About',
